@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="EmulatorDisplays">
+    <option name="displayStateByAvdFolder">
+      <map>
+        <entry key="$USER_HOME$/.android/avd/Huawei_P_Smart_API_29.avd">
+          <value>
+            <MultiDisplayState>
+              <option name="displayDescriptors">
+                <list>
+                  <DisplayDescriptor>
+                    <option name="height" value="3201" />
+                    <option name="width" value="1571" />
+                  </DisplayDescriptor>
+                  <DisplayDescriptor>
+                    <option name="displayId" value="1" />
+                    <option name="height" value="720" />
+                    <option name="width" value="480" />
+                  </DisplayDescriptor>
+                </list>
+              </option>
+              <option name="emulatorPanelState">
+                <EmulatorPanelState>
+                  <option name="splitPanel">
+                    <SplitPanelState>
+                      <option name="proportion" value="0.765967845916748" />
+                      <option name="firstComponent">
+                        <EmulatorPanelState>
+                          <option name="displayId" value="0" />
+                        </EmulatorPanelState>
+                      </option>
+                      <option name="secondComponent">
+                        <EmulatorPanelState>
+                          <option name="displayId" value="1" />
+                        </EmulatorPanelState>
+                      </option>
+                    </SplitPanelState>
+                  </option>
+                </EmulatorPanelState>
+              </option>
+            </MultiDisplayState>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

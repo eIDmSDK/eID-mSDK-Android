@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Slovensko eID</string>
+
+    <string name="general__ok">OK</string>
+    <string name="general__cancel">Cancel</string>
+    <string name="general__error">Chyba</string>
+    <string name="error__message__device_rooted">Zariadenie je rootovane. Z bezpečnostných dôvodov nie je možné pokračovať v komunikácii s občianskym preukazom.</string>
+    <string name="error__message__pin_not_activated">PIN nie je aktivovaný. PIN si môžete aktivovať v eID klientovi na Vašom desktope alebo na ktoromkoľvek odelení dokladov Policajného zboru SR.</string>
+    <string name="error__message__pin_blocked">PIN je blokovaný. PIN si môžete odblokovať v sekcii "Správa PIN kódov".</string>
+    <string name="error__action__pin_blocked">Odblokovať</string>
+    <string name="error__message__certificate_not_found">Na Vašom doklade nie je vydaný zvolený certifikát. Certifikáty si môžete vydať v eID klientovi na Vašom desktope alebo na ktoromkoľvek odelení dokladov Policajného zboru SR.</string>
+    <string name="error__message__unexpected_error">Nastala neočakávaná chyba. Skúste neskôr prosím.</string>
+    <string name="error__message__auth_error">Pri autentifikácii nastala chyba. Vygenerujte nový QR kód, naskenujte a zopakujte prihlásenie.</string>
+    <string name="error__action__auth_error">Naskenuj QR</string>
+    <string name="error__message__invalid_qr">Naskenovaný QR kód nebol rozpoznaný.</string>
+    <string name="error__message__used_qr">Naskenovaný QR kód je neplatný. Vygenerujte nový QR kód, naskenujte a zopakujte prihlásenie.</string>
+    <string name="error__action__invalid_qr">Skenovať znovu</string>
+
+    <string name="qr__scan_code">Naskenuj QR kód</string>
+
+    <string name="main__title_central_portal">ústredný portál</string>
+    <string name="main__title_public_administration">verejnej správy</string>
+    <string name="main__log_in">Prihlásiť sa</string>
+    <string name="main__log_out">Odhlásiť sa</string>
+    <string name="main__qr_scanner">Skenovať QR</string>
+    <string name="main__web">Web View</string>
+    <string name="main__certificates">Certifikáty</string>
+    <string name="main__sign_form">Podpísať formulár</string>
+    <string name="main__decrypt_data">Dešifrovať dáta</string>
+    <string name="main__user_data">Moje údaje</string>
+    <string name="main__pin_management">Správa PIN kódov</string>
+    <string name="main__tutorial">Tutoriál</string>
+    <string name="main__sk">SK</string>
+    <string name="main__en">EN</string>
+    <string name="main__reset_tutorial">Reset tutorial</string>
+    <string name="main__reset_tutorial__success">Tutoriál resetovaný</string>
+
+    <string name="sign__form__title">Formulár</string>
+    <string name="sign__form_edit__title">Meno a priezvisko</string>
+    <string name="sign__hash__get_certificate_qes">Kvalifikovaný elektronický podpis</string>
+    <string name="sign__hash__get_certificate_es">Elektronický podpis</string>
+    <string name="sign__form__sign">Podpísať</string>
+    <string name="sign__certificates__title">Certifikát</string>
+    <string name="sign__certificates__description">Týmto certifikátom bude v nasledovnom kroku podpísaný formulár</string>
+    <string name="sign__certificate__slot">Slot</string>
+    <string name="sign__certificate__index">Index</string>
+    <string name="sign__certificate__serial_number">Sériové číslo</string>
+    <string name="sign__certificate__name">Meno</string>
+    <string name="sign__certificate__supported_schemes">Podporované schémy</string>
+    <string name="sign__certificate__expiration">Časová platnosť</string>
+    <string name="sign__certificate__verification">OCSP</string>
+    <string name="sign__verify">Overiť platnosť</string>
+    <string name="sign__hash__title">HASH formuláru</string>
+    <string name="sign__continue">Pokračovať</string>
+    <string name="sign__signed_form__title">Podpísaný formulár</string>
+    <string name="sign__signed_data__success">Formulár bol úspešne podpísaný</string>
+    <string name="sign__signed_data__show">Zobraziť podpísaný HASH</string>
+
+    <string name="decrypt__form__title">Formulár</string>
+    <string name="decrypt__form__encrypt_form_data">Zašifrovať formulár</string>
+    <string name="decrypt__certificate__title">Šifrovací certifikát</string>
+    <string name="decrypt__encrypted_data__title">Zašiforvané dáta</string>
+    <string name="decrypt__encrypted_data__decrypt_data">Dešifrovať dáta</string>
+    <string name="decrypt__decrypted_data__title">Dešifrované dáta</string>
+
+</resources>

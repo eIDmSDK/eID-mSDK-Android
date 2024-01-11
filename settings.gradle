@@ -1,0 +1,26 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url = "https://maven.pkg.github.com/eIDmSDK/eID-mSDK-Android/"
+            credentials {
+                username = "eIDmSDK"
+                password = "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"
+            }
+        }
+    }
+}
+rootProject.name = "sample-app-android"
+include ':app'
+include ':base'

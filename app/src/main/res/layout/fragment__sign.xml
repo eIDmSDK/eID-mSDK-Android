@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:animateLayoutChanges="true"
+    tools:context=".ui.sign.SignActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:animateLayoutChanges="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            android:layout_marginBottom="42dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/slovensko_sk_logo_white" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/header_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:animateLayoutChanges="true"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:padding="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/view_background">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_form_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign__form__title"
+                    android:textAppearance="@style/TextAppearance.Headline6"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_edit_form_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:layout_marginEnd="@dimen/margin_8"
+                    android:text="@string/sign__form_edit__title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_form_title" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_form_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_8"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="Hello world"
+                    android:background="@drawable/text_input_background"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_edit_form_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RadioGroup
+                android:id="@+id/certificate_selector"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_12"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                >
+
+                <RadioButton
+                    android:id="@+id/btn_qes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/margin_8"
+                    android:paddingEnd="@dimen/margin_8"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/sign__hash__get_certificate_qes"
+                    android:checked="true"
+                    />
+
+                <RadioButton
+                    android:id="@+id/btn_es"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/margin_8"
+                    android:paddingEnd="@dimen/margin_8"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/sign__hash__get_certificate_es"
+                    />
+
+            </RadioGroup>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_sign"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:layout_margin="@dimen/margin_16"
+                android:text="@string/sign__form__sign"
+                android:textSize="14sp"
+                app:backgroundTint="@color/red"
+                app:shapeAppearance="@style/RoundedShapeAppearance"
+                app:icon="@drawable/ic_sign"
+                app:iconGravity="textStart"
+                app:iconPadding="16dp"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/certificates_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:padding="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/view_background"
+                android:visibility="gone"
+                tools:visibility="visible"
+                >
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_certificates_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign__certificates__title"
+                    android:textAppearance="@style/TextAppearance.Headline6"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_certificates_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:layout_marginStart="@dimen/margin_8"
+                    android:layout_marginEnd="@dimen/margin_8"
+                    android:gravity="center"
+                    android:text="@string/sign__certificates__description"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_certificates_title" />
+
+                <LinearLayout
+                    android:id="@+id/certificates_form"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_12"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:orientation="vertical"
+                    android:background="@drawable/text_input_background"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_certificates_description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        >
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text"
+                            android:textSize="14sp"
+                            android:text="@string/sign__certificate__slot"
+                            />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_certificate_slot"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            tools:text="QES"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_4"
+                        android:orientation="vertical"
+                        >
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text"
+                            android:textSize="14sp"
+                            android:text="@string/sign__certificate__index"
+                            />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_certificate_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            tools:text="1"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_4"
+                        android:orientation="vertical"
+                        >
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text"
+                            android:textSize="14sp"
+                            android:text="@string/sign__certificate__serial_number"
+                            />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_certificate_serial_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            tools:text="1"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_4"
+                        android:orientation="vertical"
+                        >
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text"
+                            android:textSize="14sp"
+                            android:text="@string/sign__certificate__name"
+                            />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_certificate_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            tools:text="Hana Molnarova"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_4"
+                        android:orientation="vertical"
+                        >
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text"
+                            android:textSize="14sp"
+                            android:text="@string/sign__certificate__supported_schemes"
+                            />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_certificate_supported_scemes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            tools:text="1.2.3.4, 1.2.3.4, 1.2.3.4, 1.2.3.4"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_4"
+                        android:orientation="vertical"
+                        >
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text"
+                            android:textSize="14sp"
+                            android:text="@string/sign__certificate__expiration"
+                            />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_certificate_expiration"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            tools:text="VALID"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_4"
+                        android:orientation="vertical"
+                        >
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/text"
+                            android:textSize="14sp"
+                            android:text="@string/sign__certificate__verification"
+                            />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_certificate_verification"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            tools:text="GOOD"
+                            />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/progress_verify"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/certificates_form"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_verify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:text="@string/sign__verify"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/colorPrimaryLight"
+                    app:shapeAppearance="@style/RoundedShapeAppearance"
+                    app:iconGravity="textStart"
+                    app:iconPadding="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/certificates_form"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/hash_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:padding="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/view_background"
+                android:visibility="gone"
+                tools:visibility="visible"
+                >
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_hash_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign__hash__title"
+                    android:textAppearance="@style/TextAppearance.Headline6"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_hash"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_8"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:text="2A 3B 4C 2A 3B 4C 2A 3B 4C 2A 3B 4C 2A 3B 4C 2A 3B 4C ..."
+                    android:background="@drawable/text_input_background"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_hash_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_continue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:layout_margin="@dimen/margin_16"
+                android:text="@string/sign__continue"
+                android:textSize="14sp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:backgroundTint="@color/red"
+                app:shapeAppearance="@style/RoundedShapeAppearance"
+                app:icon="@drawable/ic_sign"
+                app:iconGravity="textStart"
+                app:iconPadding="16dp"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/signed_form_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="@dimen/margin_24"
+                android:padding="16dp"
+                android:orientation="horizontal"
+                android:background="@drawable/view_background"
+                android:visibility="gone"
+                tools:visibility="visible"
+                >
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_signed_form_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign__signed_form__title"
+                    android:textAppearance="@style/TextAppearance.Headline6"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_signed_form_result"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_8"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/sign__signed_data__success"
+                    android:background="@drawable/text_input_background"
+                    android:drawableStart="@drawable/ic_success"
+                    android:drawablePadding="@dimen/margin_8"
+                    android:drawableTint="@color/green"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_signed_form_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_show_signed_hash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:text="@string/sign__signed_data__show"
+                    android:textSize="14sp"
+                    app:backgroundTint="@color/colorPrimaryLight"
+                    app:shapeAppearance="@style/RoundedShapeAppearance"
+                    app:iconGravity="textStart"
+                    app:iconPadding="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_signed_form_result"
+                    />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txt_signed_hash"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/margin_8"
+                    android:layout_marginTop="@dimen/margin_16"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    tools:text="2A 3B 4C 2A 3B 4C 2A 3B 4C 2A 3B 4C 2A 3B 4C 2A 3B 4C ..."
+                    android:background="@drawable/text_input_background"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_show_signed_hash"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

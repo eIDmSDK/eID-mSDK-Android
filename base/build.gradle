@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'sk.plaut.base'
+
+    compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)
+    buildToolsVersion BUILD_TOOLS_VERSION
+
+    defaultConfig {
+        minSdkVersion Integer.parseInt(MIN_SDK_VERSION)
+        targetSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    // AndroidX
+    implementation "androidx.core:core-ktx:$androidx_version"
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_core_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_android_version"
+
+    // Architecture components
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$architecture_components_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$architecture_components_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$architecture_components_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$architecture_components_version"
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_extensions_version"
+
+    // UI
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.recyclerview:recyclerview:$recycler_view"
+    implementation "androidx.constraintlayout:constraintlayout:$constrain_layout_version"
+    implementation "com.google.android.material:material:$material_design_components_version"
+
+    // Dependency injection
+    implementation "io.insert-koin:koin-android:$koin_version"
+
+    // Logger
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
+    // Test
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$test_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+}

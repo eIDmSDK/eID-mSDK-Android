@@ -1,0 +1,36 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable-anydpi-v24/ic_stat_logo.xml" value="0.2375" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2375" />
+        <entry key="app/src/main/res/drawable/ic_certificate.xml" value="0.225" />
+        <entry key="app/src/main/res/drawable/ic_download.xml" value="0.2375" />
+        <entry key="app/src/main/res/drawable/ic_log_in.xml" value="0.2375" />
+        <entry key="app/src/main/res/drawable/ic_refresh.xml" value="0.2375" />
+        <entry key="app/src/main/res/drawable/ic_sign.xml" value="0.2375" />
+        <entry key="app/src/main/res/drawable/ic_success.xml" value="0.2395" />
+        <entry key="app/src/main/res/drawable/text_input_background.xml" value="0.2375" />
+        <entry key="app/src/main/res/drawable/view_background.xml" value="0.2375" />
+        <entry key="app/src/main/res/layout/activity__qr_scanner.xml" value="0.24456521739130435" />
+        <entry key="app/src/main/res/layout/fragment__decrypt.xml" value="0.24456521739130435" />
+        <entry key="app/src/main/res/layout/fragment__main.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/fragment__sign.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/fragment__startup.xml" value="0.24456521739130435" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2375" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2375" />
+        <entry key="base/src/main/res/drawable/bg_dialog.xml" value="0.2375" />
+        <entry key="base/src/main/res/drawable/bg_dialog_title.xml" value="0.2375" />
+        <entry key="base/src/main/res/layout/dialog_fragment__confirm.xml" value="0.24456521739130435" />
+        <entry key="base/src/main/res/layout/dialog_fragment__loading.xml" value="0.24456521739130435" />
+        <entry key="base/src/main/res/layout/dialog_fragment__message.xml" value="0.24456521739130435" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="true" project-jdk-name="13" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
