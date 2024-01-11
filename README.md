@@ -43,7 +43,7 @@ dependencies {
 eID SDK je potrebné pred zavolaním akejkoľvek funkcie **inicializovať**. Inicializáciu je nutné vykonať len raz počas životného cyklu aplikácie, pomocou volania:
 
 ```kotlin
-EIDHandler.initialize(this)
+EIDHandler.initialize(this, EIDEnvironment.MINV_PROD)
 ```
 
 **Poznámka**: inicializáciu odporúčame vykonať hneď po spustení aplikácie v Application class projektu
@@ -69,7 +69,7 @@ Registrácia Activity result launcher-a:
 Spustenie procesu autentifikácie:
 
 ```kotlin
-EIDHandler.startAuth(AUTH_CLIENT_ID, AUTH_CLIENT_SECRET, this, authenticationLauncher)
+EIDHandler.startAuth(API_KEY_ID, API_KEY_VALUE, API_KEY_ID, API_KEY_VALUE, this, authenticationLauncher, language)
 ```
 
 <br>
@@ -90,7 +90,7 @@ getCertificatesLauncher = registerForActivityResult(ActivityResultContracts.Star
 Spustenie procesu získania certifikátov:
 
 ```kotlin
-EIDHandler.getCertificates(this, getCertificatesLauncher)
+EIDHandler.startCertificates(this, generalActionLauncher, language)
 ```
 
 Registrácia Activity result launcher-a pre získanie podpísaných dát:
@@ -107,7 +107,7 @@ signLauncher = registerForActivityResult(ActivityResultContracts.StartActivityFo
 Spustenie procesu podpisu:
 
 ```kotlin
-EIDHandler.startSign(certIndex, signatureScheme, dataToSignEncoded, this, signLauncher)
+EIDHandler.startSign(certIndex, signatureScheme, dataToSignEncoded, this, signLauncher, language)
 ```
 
 <br>
@@ -123,7 +123,7 @@ noActionLauncher = registerForActivityResult(ActivityResultContracts.StartActivi
 Spustenie procesu zobrazenia údajov:
 
 ```kotlin
-EIDHandler.startCertificates(this, noActionLauncher)
+EIDHandler.startCertificates(this, noActionLauncher, language)
 ```
 
 <br>
@@ -139,6 +139,6 @@ noActionLauncher = registerForActivityResult(ActivityResultContracts.StartActivi
 Spustenie procesu manažmentu znalostných faktorov:
 
 ```kotlin
-EIDHandler.startPINManagement(this, noActionLauncher)
+EIDHandler.startPINManagement(this, noActionLauncher, language)
 ```
 
