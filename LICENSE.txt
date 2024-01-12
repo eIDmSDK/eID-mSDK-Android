@@ -1,0 +1,79 @@
+PODMIENKY POUŽÍVANIA EID MSDK
+
+1 Všeobecné podmienky
+1.1 Počnúc dňom 1. 12. 2022 Ministerstvo vnútra Slovenskej republiky vydáva
+občianske preukazy vybavené bezpečnostným čipom s duálnym (kontaktným aj
+bezkontaktným) rozhraním. Preukaz obsahuje elektronickú funkcionalitu na
+preukazovanie totožnosti a vyhotovenie elektronického podpisu, ktorá občanom
+umožňuje elektronicky sa identifikovať a taktiež autorizovať žiadosti a podania
+napr. pri elektronickej komunikácii s elektronickými službami verejnej správy.
+
+1.2 eID mSDK je softvérová knižnica, resp. súbor knižníc určených na integráciu
+do aplikácií tretích strán. eID mSDK pre aplikáciu tretej strany zabezpečuje
+komunikáciu s občianskym preukazom vybaveným čipom s duálnym (kontaktným aj
+bezkontaktným) rozhraním na mobilných zariadeniach s NFC.
+
+1.3 eID mSDK je dostupné pre platformy iOS a Android.
+
+1.4. Na to, aby mohla aplikácia tretej strany poskytovať svojim používateľom
+služby založené na elektronických funkciách občianskeho preukazu v prostredí
+mobilných telefónov, musia byť splnené nasledovné podmienky
+•	mobilný telefón s operačným systémom iOS alebo Android,
+•	telefón musí byť vybavený technológiou NFC,
+•	musí integrovať špecializovaný softvér eID mSDK. Aby všetci občania
+Slovenskej republiky mohli využívať funkcionalitu elektronických občianskych
+preukazov, Ministerstvo vnútra Slovenskej republiky poskytuje tento softvér
+bezplatne.
+
+1.5. Používateľ eID mSDK, resp. vývojár aplikácie tretej strany integrujúcej
+eID mSDK, týmto potvrdzuje, že sa oboznámil s podmienkami používania eID mSDK.
+
+2 Odovzdanie eID mSDK
+eID mSDK je možné bezplatne stiahnuť z webového portálu Ministerstva vnútra
+Slovenskej republiky.
+
+3 Pravidlá používania
+3.1 Ministerstvo vnútra Slovenskej republiky udeľuje používateľovi nevýhradné
+právo na používanie eID mSDK v rozsahu funkcionalít, aké eID mSDK v zmysle
+zverejnenej dokumentácie poskytuje.
+
+3.2 Používateľ nie je oprávnený na žiadne iné komerčné ani nekomerčné využitie
+eID mSDK, najmä:
+(i) nie je oprávnený distribuovať kópie eID mSDK tretím osobám, najmä ju nesmie
+predávať ani požičiavať,
+(ii) nesmie poskytovať eID mSDK alebo jej kópie na stiahnutie na internete,
+(iii) nesmie dekompilovať, spätne analyzovať, rozkladať, upravovať alebo
+vytvárať odvodené diela založené na eID mSDK,
+(iv) nesmie kopírovať, vytvárať fragmenty alebo zrkadliť akúkoľvek časť alebo
+obsah eID mSDK,
+(v) nesmie aplikovať akýkoľvek postup alebo proces na eID mSDK s cieľom zistiť,
+odvodiť alebo privlastniť si z akéhokoľvek dôvodu alebo na akýkoľvek účel
+zdrojový kód alebo zdrojové výpisy eID mSDK alebo akýkoľvek algoritmus, proces,
+postup, informácie tvoriace obchodné tajomstvo obsiahnuté v eID mSDK,
+(vi) nesmie zasahovať do integrity alebo výkonu eID mSDK alebo údajov tretích
+strán v nej obsiahnutých alebo ich narúšať,
+(vii) nesmie pristupovať k eID mSDK s cieľom vytvoriť konkurenčný produkt alebo
+službu s využitím akéhokoľvek duševného vlastníctva alebo kopírovať akékoľvek
+jeho vlastnosti, funkcie alebo grafiku eID mSDK,
+(viii) nesmie používať eID mSDK na vykonávanie činností, ktoré by predstavovali
+alebo boli spojené s porušením práv duševného vlastníctva, vrátane, ale nielen,
+porušenia alebo zneužitia autorských práv, ochranných známok, servisných
+značiek, obchodných tajomstiev, softvérového pirátstva a patentov, ktoré
+vlastnia jednotlivci, spoločnosti alebo iné subjekty.
+
+3.3 Výrobca aplikácie tretej strany využívajúcej funkcionalitu eID
+prostredníctvom eID mSDK je povinný v rámci tejto aplikácie na viditeľnom
+mieste, minimálne v rámci sekcie „o programe“ a tiež v licenčných podmienkach,
+uviesť informáciu o použití eID mSDK od Ministerstva vnútra Slovenskej
+republiky. Uvedený musí byť minimálne nasledujúci text: „Na komunikáciu s čipom
+občianskeho preukazu je použitá knižnica eID mSDK od Ministerstva vnútra
+Slovenskej republiky. Knižnica eID mSDK a podmienky jej použitia sú zverejnené
+na stránke „https://github.com/eidmsdk“.
+
+4 Bezpečnostné zásady ochrany osobných údajov
+Ochrana osobných údajov má pre Ministerstvo vnútra Slovenskej republiky
+najvyššiu prioritu. Preto je zabezpečené, aby sa osobné údaje uložené v čipe
+elektronického dokumentu používali s ohľadom na zákony o ochrane osobných
+údajov. Zadaním bezpečnostného osobného kódu (BOK) používateľ povoľuje použitie
+svojich osobných údajov, ktoré budú poskytnuté poskytovateľovi služieb v
+procese elektronickej identifikácie.
