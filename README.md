@@ -142,6 +142,8 @@ Spustenie procesu manažmentu znalostných faktorov:
 EIDHandler.startPINManagement(this, noActionLauncher, language)
 ```
 
+<br>
+
 ### Knižnice tretích strán
 eID mSDK v rámci svojej funkčnosti používa nasledujúce knižnice s otvoreným zdrojovým kódom:
 
