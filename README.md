@@ -142,3 +142,19 @@ Spustenie procesu manažmentu znalostných faktorov:
 EIDHandler.startPINManagement(this, noActionLauncher, language)
 ```
 
+### Knižnice tretích strán
+eID mSDK v rámci svojej funkčnosti používa nasledujúce knižnice s otvoreným zdrojovým kódom:
+
+Koin (Apache License 2.0) - https://github.com/InsertKoinIO/koin/blob/main/LICENSE<br>
+Retrofit (Apache License 2.0) - https://github.com/square/retrofit/blob/master/LICENSE.txt<br>
+OKHTTP3 (Apache License 2.0) - https://github.com/square/okhttp/blob/master/LICENSE.txt<br>
+Timber (Apache License 2.0) - https://github.com/JakeWharton/timber/blob/trunk/LICENSE.txt<br>
+Glide (BSD, MIT, Apache License 2.0) - https://github.com/bumptech/glide/blob/master/LICENSE<br>
+JMRTD (LGPL License) - https://jmrtd.org/license.shtml<br>
+Bouncycastle (MIT License) - https://www.bouncycastle.org/licence.html<br>
+EJBCA (LGPL License) - https://github.com/Keyfactor/ejbca-ce/blob/main/LICENSE<br>
+SCUBA (LGPL License) - https://mvnrepository.com/artifact/net.sf.scuba/scuba-sc-android/0.0.23<br>
+JP2ForAndroid (BSD 2-Clause License) - https://github.com/ThalesGroup/JP2ForAndroid/blob/master/LICENSE<br>
+JNBIS (Apache License 2.0) - https://github.com/mhshams/jnbis/blob/main/LICENSE<br>
+Lottie - (Apache License 2.0) - https://github.com/airbnb/lottie-android/blob/master/LICENSE<br>
+Rootbeer (Apache License 2.0) - https://github.com/scottyab/rootbeer/blob/master/LICENSE<br>
