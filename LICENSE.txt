@@ -69,6 +69,11 @@ republiky. Uvedený musí byť minimálne nasledujúci text: „Na komunikáciu 
 občianskeho preukazu je použitá knižnica eID mSDK od Ministerstva vnútra
 Slovenskej republiky. Knižnica eID mSDK a podmienky jej použitia sú zverejnené
 na stránke „https://github.com/eidmsdk“.
+V prípade aplikácie v anglickom jazyku bude uvedený text: "This application
+uses for communication with the chip of the identity card the eID mSDK library 
+provided by the Ministry of Interior of the Slovak Republic. The eID mSDK 
+library and its terms of use are published on website 
+https://github.com/eidmsdk".
 
 4 Bezpečnostné zásady ochrany osobných údajov
 Ochrana osobných údajov má pre Ministerstvo vnútra Slovenskej republiky
