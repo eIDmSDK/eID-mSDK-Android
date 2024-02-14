@@ -13,7 +13,7 @@ repositories {
         url = "https://maven.pkg.github.com/eIDmSDK/eID-mSDK-Android/"
         credentials {
             username = "eIDmSDK"
-            password = "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"
+            password = "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"
         }
     }
 }
