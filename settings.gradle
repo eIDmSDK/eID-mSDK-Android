@@ -16,7 +16,7 @@ dependencyResolutionManagement {
             url = "https://maven.pkg.github.com/eIDmSDK/eID-mSDK-Android/"
             credentials {
                 username = "eIDmSDK"
-                password = "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"
+                password = "ADD_ACCESS_TOKEN"
             }
         }
     }
