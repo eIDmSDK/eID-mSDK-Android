@@ -5,7 +5,7 @@ V tomto repozitári je zverejnená Android sample aplikácia demonštrujúca pou
 
 ## Inštalácia
 
-setting.gradle
+setting.gradle<br>
 PERSONAL_ACCESS_TOKEN nájdete na https://eidas.minv.sk/download/ v časti "eID mSDK (pre vývojárov mobilných aplikácii)" 
 
 ```groovy
