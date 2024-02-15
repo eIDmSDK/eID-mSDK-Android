@@ -6,6 +6,7 @@ V tomto repozitári je zverejnená Android sample aplikácia demonštrujúca pou
 ## Inštalácia
 
 setting.gradle
+PERSONAL_ACCESS_TOKEN nájdete na https://eidas.minv.sk/download/ v časti "eID mSDK (pre vývojárov mobilných aplikácii)" 
 
 ```groovy
 repositories {
@@ -13,7 +14,7 @@ repositories {
         url = "https://maven.pkg.github.com/eIDmSDK/eID-mSDK-Android/"
         credentials {
             username = "eIDmSDK"
-            password = "ADD_ACCESS_TOKEN"
+            password = "PERSONAL_ACCESS_TOKEN"
         }
     }
 }

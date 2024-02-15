@@ -14,9 +14,10 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
         maven {
             url = "https://maven.pkg.github.com/eIDmSDK/eID-mSDK-Android/"
+            // PERSONAL_ACCESS_TOKEN nájdete na https://eidas.minv.sk/download/ v časti "eID mSDK (pre vývojárov mobilných aplikácii)"
             credentials {
                 username = "eIDmSDK"
-                password = "ADD_ACCESS_TOKEN"
+                password = "PERSONAL_ACCESS_TOKEN"
             }
         }
     }
