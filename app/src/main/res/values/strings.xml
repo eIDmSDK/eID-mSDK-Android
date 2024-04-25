@@ -30,10 +30,9 @@
     <string name="main__user_data">Moje údaje</string>
     <string name="main__pin_management">Správa PIN kódov</string>
     <string name="main__tutorial">Tutoriál</string>
-    <string name="main__sk">SK</string>
-    <string name="main__en">EN</string>
-    <string name="main__reset_tutorial">Reset tutorial</string>
-    <string name="main__reset_tutorial__success">Tutoriál resetovaný</string>
+    <string name="main__settings">Nastavenia</string>
+    <string name="main__sdk_version">Verzia eID mSDK</string>
+
 
     <string name="sign__form__title">Formulár</string>
     <string name="sign__form_edit__title">Meno a priezvisko</string>
@@ -63,4 +62,20 @@
     <string name="decrypt__encrypted_data__decrypt_data">Dešifrovať dáta</string>
     <string name="decrypt__decrypted_data__title">Dešifrované dáta</string>
 
+    <string name="settings__title">Nastavenia</string>
+    <string name="settings__environment">Prostredie</string>
+    <string name="settings__plaut_dev">PLAUT DEV</string>
+    <string name="settings__plaut_test">PLAUT TEST</string>
+    <string name="settings__minv_test">MINV TEST</string>
+    <string name="settings__minv_prod">MINV PROD</string>
+    <string name="settings__language">Jazyk</string>
+    <string name="settings__system">Systémový</string>
+    <string name="settings__sk">Slovensky</string>
+    <string name="settings__en">Anglicky</string>
+    <string name="settings__auth_flow">Autentifikačný flow</string>
+    <string name="settings__auth_code">Authorization code</string>
+    <string name="settings__implicit">Implicit</string>
+    <string name="settings__tutorial">Tutoriál</string>
+    <string name="settings__reset_tutorial">Resetovať tutoriál</string>
+    <string name="settings__reset_tutorial__success">Tutoriál resetovaný</string>
 </resources>

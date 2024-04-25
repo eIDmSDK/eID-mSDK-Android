@@ -1,4 +1,4 @@
-# eID-SDK (v1.3.4)
+# eID-SDK (v1.4.0)
 
 eID mSDK je zverejnené v Maven repozitári: https://github.com/eIDmSDK/eID-mSDK-Android/packages<br>
 V tomto repozitári je zverejnená Android sample aplikácia demonštrujúca použitie eID mSDK. 
@@ -58,8 +58,13 @@ Registrácia Activity result launcher-a:
 ```kotlin
  authenticationLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
     if (result.resultCode == Activity.RESULT_OK) {
+        // Retrieve ID token from eID SDK
         val idToken = result.data?.getStringExtra("ID_TOKEN")
         // Process idToken
+        
+        // Retrieve Auth code from eID SDK
+        val authCode = result.data?.getStringExtra("AUTH_CODE")
+        // Process Auth code
     } else if (result.resultCode == Activity.RESULT_CANCELED) {
         // Retrieve exception
         val exception = result.data?.extras?.getSerializable("EXCEPTION") as Throwable?
@@ -69,8 +74,22 @@ Registrácia Activity result launcher-a:
 
 Spustenie procesu autentifikácie:
 
+Auth code flow:
+
 ```kotlin
-EIDHandler.startAuth(API_KEY_ID, API_KEY_VALUE, API_KEY_ID, API_KEY_VALUE, this, authenticationLauncher, language)
+EIDHandler.startAuth(CLIENT_ID, CLIENT_SECRET, API_KEY_ID?, API_KEY_VALUE?, this, authenticationLauncher, language)
+```
+
+Implicit flow:
+
+```kotlin
+EIDHandler.startAuth(CLIENT_ID, API_KEY_ID?, API_KEY_VALUE?, this, authenticationLauncher, language)
+```
+
+Auth code / Implicit flow:
+
+```kotlin
+EIDHandler.startAuth(CLIENT_ID, CLIENT_SECRET?, API_KEY_ID?, API_KEY_VALUE?, this, authenticationLauncher, EIDAuthenticationFlow, language)
 ```
 
 <br>

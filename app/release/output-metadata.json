@@ -4,16 +4,16 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "sk.plaut.sample_app",
+  "applicationId": "sk.minv.sample_app",
   "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 1,
-      "versionName": "0.1",
-      "outputFile": "sample_app-release-0.1-1-202303101140.apk"
+      "versionCode": 4,
+      "versionName": "1.2",
+      "outputFile": "sample_app-release-1.2-4-202404172355.apk"
     }
   ],
   "elementType": "File"

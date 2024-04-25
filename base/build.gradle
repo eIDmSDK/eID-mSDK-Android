@@ -6,10 +6,9 @@ plugins {
 }
 
 android {
-    namespace 'sk.plaut.base'
+    namespace 'sk.minv.base'
 
-    compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)
-    buildToolsVersion BUILD_TOOLS_VERSION
+    compileSdk Integer.parseInt(COMPILE_SDK_VERSION)
 
     defaultConfig {
         minSdkVersion Integer.parseInt(MIN_SDK_VERSION)
@@ -62,6 +61,11 @@ dependencies {
 
     // Dependency injection
     implementation "io.insert-koin:koin-android:$koin_version"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okHttp_version"
 
     // Logger
     implementation "com.jakewharton.timber:timber:$timber_version"
