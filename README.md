@@ -35,9 +35,8 @@ dependencies {
 **SDK** poskytuje nasledujúce okruhy **funkcionalít**:
 1.	**Autentifikácia** osoby na **najvyššej úrovni** zabezpečenia (Vysoká) podľa eIDAS
 2.	Vyhotovenie **kvalifikovaného elektronického podpisu**
-3.	**Zobrazenie údajov** z občianskeho preukazu (biometrické a textové dáta)
-4.	**Zobrazenie certifikátov** z občianskeho preukazu
-5.	**Manažment znalostných faktorov** (BOK, KEP PIN, PUK) 
+3.	**Zobrazenie certifikátov** z občianskeho preukazu
+4.	**Manažment znalostných faktorov** (BOK, KEP PIN, PUK) 
 
 ### Inicializácia
 
