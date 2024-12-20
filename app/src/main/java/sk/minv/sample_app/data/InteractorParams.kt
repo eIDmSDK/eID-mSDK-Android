@@ -16,5 +16,5 @@ data class GetTokenParams(
     val clientSecret: String,
     val code: String,
     val scope: String = AppConstants.SCOPE,
-    val redirectUri: String = AppConstants.REDIRECT_URI
+    val redirectUri: String
 )

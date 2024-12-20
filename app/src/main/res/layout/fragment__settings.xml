@@ -72,29 +72,6 @@
                 >
 
                 <RadioButton
-                    android:id="@+id/rb_plaut_dev"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_4"
-                    android:paddingStart="@dimen/margin_8"
-                    android:paddingEnd="@dimen/margin_8"
-                    android:textColor="@color/black"
-                    android:text="@string/settings__plaut_dev"
-                    />
-
-                <RadioButton
-                    android:id="@+id/rb_plaut_test"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/margin_4"
-                    android:paddingStart="@dimen/margin_8"
-                    android:paddingEnd="@dimen/margin_8"
-                    android:textColor="@color/black"
-                    android:text="@string/settings__plaut_test"
-                    android:checked="true"
-                    />
-
-                <RadioButton
                     android:id="@+id/rb_minv_test"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

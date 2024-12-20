@@ -123,24 +123,6 @@
                 />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_read_qr"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_8"
-                android:layout_marginStart="46dp"
-                android:layout_marginEnd="46dp"
-                android:paddingTop="12dp"
-                android:paddingBottom="12dp"
-                android:textSize="14sp"
-                android:text="@string/main__qr_scanner"
-                app:icon="@drawable/ic_qr_code_scanner"
-                app:iconGravity="textStart"
-                app:iconPadding="16dp"
-                app:backgroundTint="@color/red"
-                app:elevation="20dp"
-                />
-
-            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_certificates"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

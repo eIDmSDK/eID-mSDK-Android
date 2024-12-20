@@ -1,14 +1,9 @@
 package sk.minv.sample_app.ui.main
 
-import android.Manifest
-import android.content.pm.PackageManager
 import android.nfc.TagLostException
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.content.ContextCompat
 import org.koin.core.component.KoinComponent
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.component.inject
@@ -40,7 +35,6 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainHandler>(), KoinCompo
     private val viewModel: MainViewModel by viewModel()
     private val preferences: Preferences by inject()
 
-    private lateinit var cameraPermissionLauncher: ActivityResultLauncher<String>
     private var language: String? = null
 
     /*-------------------------*/
@@ -64,12 +58,6 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainHandler>(), KoinCompo
     }
 
     override fun onViewReady() {
-        cameraPermissionLauncher = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
-            if (isGranted) {
-                handler.openQrCodeReader()
-            }
-        }
-
         // Show title
         val titlePart1 = getString(R.string.main__title_central_portal)
         val titlePart2 = getString(R.string.main__title_public_administration)
@@ -92,10 +80,6 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainHandler>(), KoinCompo
             binding.btnLogOut.visibility = View.GONE
             binding.txtUserLabel.visibility = View.INVISIBLE
             binding.txtUser.visibility = View.INVISIBLE
-        }
-
-        binding.btnReadQr.onClick {
-            checkPermissionAndOpenQrCodeReader()
         }
 
         binding.btnCertificates.onClick {
@@ -135,7 +119,6 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainHandler>(), KoinCompo
     override fun onConfirmDialogAction(action: ConfirmDialogFragment.ConfirmDialogAction?, tag: String?) {
         if (action == ConfirmDialogFragment.ConfirmDialogAction.POSITIVE_BUTTON_CLICK) {
             when (tag) {
-                AppConstants.DIALOG_TAG_QR_SCANNER -> handler.openQrCodeReader()
                 AppConstants.DIALOG_TAG_PIN_MANAGEMENT -> handler.openPINManagementScreen(language)
             }
         }
@@ -157,28 +140,10 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainHandler>(), KoinCompo
         viewModel.getToken(authCode)
     }
 
-    fun handleQrCode(qrCodeData: String?) {
-        handler.handleQrCode(qrCodeData, language)
-    }
-
     /**
      * Show error
      */
-    fun onQrCodeExceptionReceived(exception: Throwable?) {
-        exception?.let {
-            showConfirmDialog(
-                getString(R.string.general__error),
-                getString(R.string.error__message__invalid_qr),
-                getString(R.string.error__action__invalid_qr),
-                AppConstants.DIALOG_TAG_QR_SCANNER
-            )
-        }
-    }
-
-    /**
-     * Show error
-     */
-    fun onEidExceptionReceived(exception: Throwable?, qrScanner: Boolean = false) {
+    fun onEidExceptionReceived(exception: Throwable?) {
         exception?.let {
             when (it) {
                 is DeviceRootedException -> showMessageDialog(getString(R.string.general__error), getString(R.string.error__message__device_rooted))
@@ -195,21 +160,8 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainHandler>(), KoinCompo
                 is TagLostException,
                 is ServerException,
                 is EacFailedException -> {
-                    if (qrScanner) {
-                        showConfirmDialog(
-                            getString(R.string.general__error),
-                            getString(R.string.error__message__auth_error),
-                            getString(R.string.error__action__auth_error),
-                            AppConstants.DIALOG_TAG_QR_SCANNER)
-                    } else {
-                        showMessageDialog(getString(R.string.general__error), getString(R.string.error__message__unexpected_error))
-                    }
+                    showMessageDialog(getString(R.string.general__error), getString(R.string.error__message__unexpected_error))
                 }
-                is UsedTokenException -> showConfirmDialog(
-                    getString(R.string.general__error),
-                    getString(R.string.error__message__used_qr),
-                    getString(R.string.error__action__invalid_qr),
-                    AppConstants.DIALOG_TAG_QR_SCANNER)
                 is UnsupportedSDKVersionException -> {
                     // Update SDK version
                     Timber.e(it)
@@ -235,15 +187,6 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainHandler>(), KoinCompo
                 binding.txtUser.text = String.format("%s %s", userInfoState.data.given_name, userInfoState.data.family_name)
             }
             is DataLoadState.Error -> showErrorDialog(userInfoState.error)
-        }
-    }
-
-    private fun checkPermissionAndOpenQrCodeReader() {
-        context?.let {
-            when (PackageManager.PERMISSION_GRANTED) {
-                ContextCompat.checkSelfPermission(it, Manifest.permission.CAMERA) -> handler.openQrCodeReader()
-                else -> cameraPermissionLauncher.launch(Manifest.permission.CAMERA)
-            }
         }
     }
 

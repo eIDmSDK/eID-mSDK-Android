@@ -64,8 +64,6 @@
 
     <string name="settings__title">Nastavenia</string>
     <string name="settings__environment">Prostredie</string>
-    <string name="settings__plaut_dev">PLAUT DEV</string>
-    <string name="settings__plaut_test">PLAUT TEST</string>
     <string name="settings__minv_test">MINV TEST</string>
     <string name="settings__minv_prod">MINV PROD</string>
     <string name="settings__language">Jazyk</string>

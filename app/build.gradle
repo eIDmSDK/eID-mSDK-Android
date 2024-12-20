@@ -25,11 +25,11 @@ android {
 
     buildTypes {
         debug {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -63,8 +63,8 @@ dependencies {
     implementation project(':base')
 
     // EID SDK
-    implementation "sk.eid:eid-sdk:1.4.0"
-    implementation "sk.eid:eid-exceptions-sdk:1.4.0"
+    implementation "sk.eid:eid-sdk:1.4.1"
+    implementation "sk.eid:eid-exceptions-sdk:1.4.1"
 
     // AndroidX
     implementation "androidx.core:core-ktx:$androidx_version"

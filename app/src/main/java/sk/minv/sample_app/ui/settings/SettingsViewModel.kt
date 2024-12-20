@@ -39,14 +39,6 @@ class SettingsViewModel(
 
     fun onEnvironmentSelected(checkedId: Int): EIDEnvironment {
         when (checkedId) {
-            R.id.rb_plaut_dev -> {
-                preferences.setSelectedEnvironment(EIDEnvironment.PLAUT_DEV)
-                return EIDEnvironment.PLAUT_DEV
-            }
-            R.id.rb_plaut_test -> {
-                preferences.setSelectedEnvironment(EIDEnvironment.PLAUT_TEST)
-                return EIDEnvironment.PLAUT_TEST
-            }
             R.id.rb_minv_test -> {
                 preferences.setSelectedEnvironment(EIDEnvironment.MINV_TEST)
                 return EIDEnvironment.MINV_TEST
@@ -56,7 +48,7 @@ class SettingsViewModel(
                 return EIDEnvironment.MINV_PROD
             }
         }
-        return EIDEnvironment.PLAUT_TEST
+        return EIDEnvironment.MINV_TEST
     }
 
     fun onLanguageSelected(checkedId: Int) {

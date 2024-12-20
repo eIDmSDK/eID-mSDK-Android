@@ -67,10 +67,9 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding, NoHandler>(), Koi
             is DataLoadState.Loading -> { }
             is DataLoadState.Success -> {
                 when (dataLoadState.data) {
-                    EIDEnvironment.PLAUT_DEV -> binding.rbPlautDev.isChecked = true
-                    EIDEnvironment.PLAUT_TEST -> binding.rbPlautTest.isChecked = true
                     EIDEnvironment.MINV_TEST -> binding.rbMinvTest.isChecked = true
                     EIDEnvironment.MINV_PROD -> binding.rbMinvProd.isChecked = true
+                    else -> binding.rbMinvTest.isChecked = true
                 }
                 binding.rgEnvironment.setOnCheckedChangeListener { _, checkedId ->
                     val selectedEnvironment = viewModel.onEnvironmentSelected(checkedId)

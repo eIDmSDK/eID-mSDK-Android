@@ -49,6 +49,14 @@ object AppUtils {
         }
     }
 
+    fun getRedirectUri(environment: EIDEnvironment): String {
+        return when (environment) {
+            EIDEnvironment.MINV_TEST -> AppConstants.REDIRECT_URI_MINV_TEST
+            EIDEnvironment.MINV_PROD -> AppConstants.REDIRECT_URI_MINV_PROD
+            else -> throw Exception("URL not available")
+        }
+    }
+
     fun getClientId(environment: EIDEnvironment): String {
         return when (environment) {
             EIDEnvironment.MINV_TEST -> AppConstants.CLIENT_ID_MINV_TEST

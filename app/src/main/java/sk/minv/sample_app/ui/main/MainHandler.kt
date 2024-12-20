@@ -6,10 +6,6 @@ interface MainHandler : BaseHandler {
 
     fun openAuthenticationScreen(language: String?)
 
-    fun openQrCodeReader()
-
-    fun handleQrCode(qrCodeData: String?, language: String?)
-
     fun openCertificatesScreen(language: String?)
 
     fun openSigningScreen()

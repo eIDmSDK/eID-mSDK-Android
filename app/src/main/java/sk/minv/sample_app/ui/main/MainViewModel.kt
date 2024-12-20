@@ -64,7 +64,8 @@ class MainViewModel(
             val url = AppUtils.getUrl(environment)
             val clientId = AppUtils.getClientId(environment)
             val clientSecret = AppUtils.getClientSecret(environment)
-            val params = GetTokenParams(url = url, clientId = clientId, clientSecret = clientSecret, code = authorizationCode)
+            val redirectUri = AppUtils.getRedirectUri(environment)
+            val params = GetTokenParams(url = url, clientId = clientId, clientSecret = clientSecret, code = authorizationCode, redirectUri = redirectUri)
             getTokenUseCase(params)
                 .onSuccess { getUserData(it.idToken) }
                 .onFailure { _getUserDataLoadState.postValue(DataLoadState.Error(it)) }

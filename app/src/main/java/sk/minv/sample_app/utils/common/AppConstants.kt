@@ -7,7 +7,8 @@ object AppConstants {
     const val CONTENT_TYPE = "application/x-www-form-urlencoded"
     const val GRANT_TYPE = "authorization_code"
     const val SCOPE = "openid"
-    const val REDIRECT_URI = "eid://authResult?success=true"
+    const val REDIRECT_URI_MINV_TEST = "sk.minv.eid-test://authResult?success=true"
+    const val REDIRECT_URI_MINV_PROD = "sk.minv.eid://authResult?success=true"
     const val CONNECTION_TIMEOUT = 60L
 
     // Auth EID SDK - ClientID and ClientSecret
@@ -17,6 +18,5 @@ object AppConstants {
     const val CLIENT_SECRET_MINV_PROD = "CLIENT_SECRET_MINV_PROD"
 
     // Dialog tags
-    const val DIALOG_TAG_QR_SCANNER = "QR_SCANNER"
     const val DIALOG_TAG_PIN_MANAGEMENT = "PIN_MANAGEMENT"
 }

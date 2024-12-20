@@ -13,7 +13,6 @@ import sk.minv.base.base.activity.NoParameters
 import sk.minv.base.utils.helpers.getSerializable
 import sk.minv.sample_app.data.AuthenticationFlow
 import sk.minv.sample_app.ui.decrypt.DecryptActivity
-import sk.minv.sample_app.ui.qr.QRCodeReaderActivity
 import sk.minv.sample_app.ui.settings.SettingsActivity
 import sk.minv.sample_app.ui.sign.SignActivity
 import sk.minv.sample_app.utils.common.AppUtils
@@ -31,8 +30,6 @@ class MainActivity : BaseActivity<NoParameters, MainFragment>(), MainHandler, Ko
     private val preferences: Preferences by inject()
 
     private lateinit var authenticationLauncher: ActivityResultLauncher<Intent>
-    private lateinit var qrCodeHandlerLauncher: ActivityResultLauncher<Intent>
-    private lateinit var qrReaderLauncher: ActivityResultLauncher<Intent>
     private lateinit var generalActionLauncher: ActivityResultLauncher<Intent>
     private lateinit var noActionLauncher: ActivityResultLauncher<Intent>
 
@@ -75,22 +72,6 @@ class MainActivity : BaseActivity<NoParameters, MainFragment>(), MainHandler, Ko
             }
         }
 
-        qrCodeHandlerLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-           if (result.resultCode == Activity.RESULT_CANCELED) {
-                // Retrieve exception from eID SDK
-                val exception = result.data?.getSerializable<Throwable>("EXCEPTION")
-                fragment.onEidExceptionReceived(exception, true)
-            }
-        }
-
-        qrReaderLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                // Retrieve QR code data
-                val qrCodeData = result.data?.getStringExtra(QRCodeReaderActivity.EXTRA_QR_DATA)
-                fragment.handleQrCode(qrCodeData)
-            }
-        }
-
         generalActionLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_CANCELED) {
                 // Retrieve exception from eID SDK
@@ -118,18 +99,6 @@ class MainActivity : BaseActivity<NoParameters, MainFragment>(), MainHandler, Ko
                 val clientSecret = AppUtils.getClientSecret(preferences.getSelectedEnvironment())
                 EIDHandler.startAuth(clientId, clientSecret, null, null,this, authenticationLauncher, language)
             }
-        }
-    }
-
-    override fun openQrCodeReader() {
-        // Open QR code reader
-        qrReaderLauncher.launch(QRCodeReaderActivity.createIntent(this))
-    }
-
-    override fun handleQrCode(qrCodeData: String?, language: String?) {
-        EIDHandler.handleQRCode(null, null, qrCodeData, this, qrCodeHandlerLauncher, language) {
-            // Handle error
-            fragment.onQrCodeExceptionReceived(it)
         }
     }
 
