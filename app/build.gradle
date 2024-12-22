@@ -63,8 +63,8 @@ dependencies {
     implementation project(':base')
 
     // EID SDK
-    implementation "sk.eid:eid-sdk:1.4.1"
-    implementation "sk.eid:eid-exceptions-sdk:1.4.1"
+    implementation "sk.eid:eid-sdk:1.4.2"
+    implementation "sk.eid:eid-exceptions-sdk:1.4.2"
 
     // AndroidX
     implementation "androidx.core:core-ktx:$androidx_version"
