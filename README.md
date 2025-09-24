@@ -18,7 +18,7 @@ repositories {
     }
 }
 ```
-PERSONAL_ACCESS_TOKEN nájdete na https://eidas.minv.sk/download/ v časti "eID mSDK (pre vývojárov mobilných aplikácii)"<br><br>
+PERSONAL_ACCESS_TOKEN - Token je potrebné vygenerovať cez váš Github účet. Návod na generovanie nájdete v Github dokumentácii na nasledovnom odkaze: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic<br><br>
 
 build.gradle
 
