@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Slovensko eID</string>
+    <string name="app_name">eID mSDK</string>
 
     <string name="general__ok">OK</string>
     <string name="general__cancel">Cancel</string>

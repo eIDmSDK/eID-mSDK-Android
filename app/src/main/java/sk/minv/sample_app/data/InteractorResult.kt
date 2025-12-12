@@ -16,11 +16,6 @@ enum class AppLanguage(val value: String?) {
     ENGLISH("en")
 }
 
-enum class AuthenticationFlow(val value: String) {
-    AUTH_CODE("auth_code"),
-    IMPLICIT("implicit"),
-}
-
 /*-------------------------*/
 /*      DATA CLASSES       */
 /*-------------------------*/

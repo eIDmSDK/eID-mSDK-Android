@@ -1,6 +1,5 @@
 package sk.minv.sample_app.ui.main
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import androidx.activity.result.ActivityResultLauncher
@@ -11,7 +10,6 @@ import sk.eid.eidhandlerpublic.EIDHandler
 import sk.minv.base.base.activity.BaseActivity
 import sk.minv.base.base.activity.NoParameters
 import sk.minv.base.utils.helpers.getSerializable
-import sk.minv.sample_app.data.AuthenticationFlow
 import sk.minv.sample_app.ui.decrypt.DecryptActivity
 import sk.minv.sample_app.ui.settings.SettingsActivity
 import sk.minv.sample_app.ui.sign.SignActivity
@@ -54,18 +52,13 @@ class MainActivity : BaseActivity<NoParameters, MainFragment>(), MainHandler, Ko
 
     override fun onViewReady() {
         authenticationLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                // Retrieve ID token from eID SDK
-                val idToken = result.data?.getStringExtra("ID_TOKEN")
-                if (idToken != null) {
-                    fragment.onIdTokenReceived(idToken)
-                }
+            if (result.resultCode == RESULT_OK) {
                 // Retrieve Auth code from eID SDK
                 val authCode = result.data?.getStringExtra("AUTH_CODE")
                 if (authCode != null) {
                     fragment.onAuthCodeReceived(authCode)
                 }
-            } else if (result.resultCode == Activity.RESULT_CANCELED) {
+            } else if (result.resultCode == RESULT_CANCELED) {
                 // Retrieve exception from eID SDK
                 val exception = result.data?.getSerializable<Throwable>("EXCEPTION")
                 fragment.onEidExceptionReceived(exception)
@@ -73,7 +66,7 @@ class MainActivity : BaseActivity<NoParameters, MainFragment>(), MainHandler, Ko
         }
 
         generalActionLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_CANCELED) {
+            if (result.resultCode == RESULT_CANCELED) {
                 // Retrieve exception from eID SDK
                 val exception = result.data?.getSerializable<Throwable>("EXCEPTION")
                 fragment.onEidExceptionReceived(exception)
@@ -88,18 +81,11 @@ class MainActivity : BaseActivity<NoParameters, MainFragment>(), MainHandler, Ko
     /*-------------------------*/
 
     override fun openAuthenticationScreen(language: String?) {
-        // Get ID token / Auth code from eID SDK
-        when (preferences.getSelectedAuthenticationFlow()) {
-            AuthenticationFlow.AUTH_CODE -> {
-                val clientId = AppUtils.getClientId(preferences.getSelectedEnvironment())
-                EIDHandler.startAuth(clientId, null, null,this, authenticationLauncher, language)
-            }
-            AuthenticationFlow.IMPLICIT -> {
-                val clientId = AppUtils.getClientId(preferences.getSelectedEnvironment())
-                val clientSecret = AppUtils.getClientSecret(preferences.getSelectedEnvironment())
-                EIDHandler.startAuth(clientId, clientSecret, null, null,this, authenticationLauncher, language)
-            }
-        }
+        // Get Auth code from eID SDK
+        val clientId = AppUtils.getClientId(preferences.getSelectedEnvironment())
+        val apiKey = AppUtils.getClientId(preferences.getSelectedEnvironment())
+        val apiKeyValue = AppUtils.getClientSecret(preferences.getSelectedEnvironment())
+        EIDHandler.startAuth(clientId, apiKey, apiKeyValue, this, authenticationLauncher, language)
     }
 
     override fun openCertificatesScreen(language: String?) {

@@ -1,5 +1,13 @@
 # Changelog
 
+### v2.0 (2025-12-12)
+eID mSDK
+- redizajn
+- zlepšenie stability
+
+Sample app
+- aktualizácia knižníc
+
 ### v1.4.2 (2024-12-22)
 eID mSDK
 - nový dizajn OP

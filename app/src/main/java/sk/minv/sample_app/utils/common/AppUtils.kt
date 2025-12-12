@@ -5,7 +5,6 @@ import android.content.res.Configuration
 import sk.eid.eidhandlerpublic.EIDEnvironment
 import sk.minv.sample_app.data.AppLanguage
 import sk.minv.sample_app.utils.managers.Preferences
-import java.lang.Exception
 import java.util.*
 
 object AppUtils {
@@ -45,7 +44,6 @@ object AppUtils {
         return when (environment) {
             EIDEnvironment.MINV_TEST -> AppConstants.AUTH_BASE_URL_MINV_TEST
             EIDEnvironment.MINV_PROD -> AppConstants.AUTH_BASE_URL_MINV_PROD
-            else -> throw Exception("URL not available")
         }
     }
 
@@ -53,7 +51,6 @@ object AppUtils {
         return when (environment) {
             EIDEnvironment.MINV_TEST -> AppConstants.REDIRECT_URI_MINV_TEST
             EIDEnvironment.MINV_PROD -> AppConstants.REDIRECT_URI_MINV_PROD
-            else -> throw Exception("URL not available")
         }
     }
 
@@ -61,7 +58,6 @@ object AppUtils {
         return when (environment) {
             EIDEnvironment.MINV_TEST -> AppConstants.CLIENT_ID_MINV_TEST
             EIDEnvironment.MINV_PROD -> AppConstants.CLIENT_ID_MINV_PROD
-            else -> throw Exception("ClientID not available")
         }
     }
 
@@ -69,7 +65,6 @@ object AppUtils {
         return when (environment) {
             EIDEnvironment.MINV_TEST -> AppConstants.CLIENT_SECRET_MINV_TEST
             EIDEnvironment.MINV_PROD -> AppConstants.CLIENT_SECRET_MINV_PROD
-            else -> throw Exception("ClientSecret not available")
         }
     }
 }

@@ -7,7 +7,6 @@ import sk.eid.eidhandlerpublic.EIDEnvironment
 import sk.minv.base.base.interactor.DataLoadState
 import sk.minv.sample_app.R
 import sk.minv.sample_app.data.AppLanguage
-import sk.minv.sample_app.data.AuthenticationFlow
 import sk.minv.sample_app.utils.managers.Preferences
 
 class SettingsViewModel(
@@ -22,8 +21,6 @@ class SettingsViewModel(
     val environmentDataLoadState: LiveData<DataLoadState<EIDEnvironment>> = _environmentDataLoadState
     private val _languageDataLoadState = MutableLiveData<DataLoadState<AppLanguage>>()
     val languageDataLoadState: LiveData<DataLoadState<AppLanguage>> = _languageDataLoadState
-    private val _authenticationFlowDataLoadState = MutableLiveData<DataLoadState<AuthenticationFlow>>()
-    val authenticationFlowDataLoadState: LiveData<DataLoadState<AuthenticationFlow>> = _authenticationFlowDataLoadState
     private val _resetTutorialDataLoadState = MutableLiveData<DataLoadState<Boolean>>()
     val resetTutorialDataLoadState: LiveData<DataLoadState<Boolean>> = _resetTutorialDataLoadState
 
@@ -34,7 +31,6 @@ class SettingsViewModel(
     fun loadData() {
         _environmentDataLoadState.postValue(DataLoadState.Success(preferences.getSelectedEnvironment()))
         _languageDataLoadState.postValue(DataLoadState.Success(preferences.getSelectedLanguage()))
-        _authenticationFlowDataLoadState.postValue(DataLoadState.Success(preferences.getSelectedAuthenticationFlow()))
     }
 
     fun onEnvironmentSelected(checkedId: Int): EIDEnvironment {
@@ -53,15 +49,9 @@ class SettingsViewModel(
 
     fun onLanguageSelected(checkedId: Int) {
         when (checkedId) {
+            R.id.rb_system -> preferences.setSelectedLanguage(AppLanguage.SYSTEM)
             R.id.rb_slovak -> preferences.setSelectedLanguage(AppLanguage.SLOVAK)
             R.id.rb_english -> preferences.setSelectedLanguage(AppLanguage.ENGLISH)
-        }
-    }
-
-    fun onAuthenticationFlowSelected(checkedId: Int) {
-        when (checkedId) {
-            R.id.rb_auth_code -> preferences.setSelectedAuthenticationFlow(AuthenticationFlow.AUTH_CODE)
-            R.id.rb_implicit -> preferences.setSelectedAuthenticationFlow(AuthenticationFlow.IMPLICIT)
         }
     }
 

@@ -56,6 +56,12 @@ android {
             }
         }
     }
+
+    packaging {
+        resources {
+            excludes += "META-INF/versions/9/OSGI-INF/MANIFEST.MF"
+        }
+    }
 }
 
 dependencies {
@@ -63,8 +69,8 @@ dependencies {
     implementation project(':base')
 
     // EID SDK
-    implementation "sk.eid:eid-sdk:1.4.2"
-    implementation "sk.eid:eid-exceptions-sdk:1.4.2"
+    implementation "sk.eid:eid-sdk:2.0"
+    implementation "sk.eid:eid-exceptions-sdk:2.0"
 
     // AndroidX
     implementation "androidx.core:core-ktx:$androidx_version"
@@ -99,13 +105,12 @@ dependencies {
 
     // Shared preferences
     implementation "androidx.preference:preference-ktx:$default_shared_preferences_version"
-    implementation "androidx.security:security-crypto:$crypto_shared_preferences_version"
 
     // Logger
     implementation "com.jakewharton.timber:timber:$timber_version"
 
     // JSON serialization/deserialization
-    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'com.google.code.gson:gson:2.13.1'
 
     // Google vision
     implementation 'com.google.android.gms:play-services-vision:20.1.3'

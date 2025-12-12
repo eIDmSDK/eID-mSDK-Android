@@ -1,6 +1,5 @@
 package sk.minv.sample_app.ui.decrypt
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import androidx.activity.result.ActivityResultLauncher
@@ -42,11 +41,11 @@ class DecryptActivity : BaseActivity<NoParameters, DecryptFragment>(), DecryptHa
     override fun onViewReady() {
         // Retrieve certificates JSON from eID SDK
         getCertificatesLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
+            if (result.resultCode == RESULT_OK) {
                 val certificatesJson = result.data?.getStringExtra("CERTIFICATES")
                 // Process JSON in Fragment
                 fragment.processReceivedCertificatesJson(certificatesJson)
-            } else if (result.resultCode == Activity.RESULT_CANCELED) {
+            } else if (result.resultCode == RESULT_CANCELED) {
                 // Retrieve exception from eID SDK
                 val exception = result.data?.getSerializable<Throwable>("EXCEPTION")
                 fragment.onEidExceptionReceived(exception)
@@ -55,11 +54,11 @@ class DecryptActivity : BaseActivity<NoParameters, DecryptFragment>(), DecryptHa
 
         // Retrieve Base64 encoded decrypted data from eID SDK
         decryptLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
+            if (result.resultCode == RESULT_OK) {
                 val decryptedDataEncoded = result.data?.getStringExtra("DECRYPTED_DATA")
                 // Process data in Fragment
                 fragment.processReceivedDecryptedData(decryptedDataEncoded)
-            } else if (result.resultCode == Activity.RESULT_CANCELED) {
+            } else if (result.resultCode == RESULT_CANCELED) {
                 // Retrieve exception from eID SDK
                 val exception = result.data?.getSerializable<Throwable>("EXCEPTION")
                 fragment.onEidExceptionReceived(exception)

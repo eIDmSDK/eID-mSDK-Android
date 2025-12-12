@@ -38,14 +38,6 @@
             />
 
         <activity
-            android:name=".ui.qr.QRCodeReaderActivity"
-            android:theme="@style/Theme.SampleApp"
-            android:launchMode="singleInstance"
-            android:screenOrientation="portrait"
-            android:exported="false"
-            />
-
-        <activity
             android:name=".ui.sign.SignActivity"
             android:theme="@style/Theme.SampleApp"
             android:launchMode="singleInstance"
@@ -55,14 +47,6 @@
 
         <activity
             android:name=".ui.decrypt.DecryptActivity"
-            android:theme="@style/Theme.SampleApp"
-            android:launchMode="singleInstance"
-            android:screenOrientation="portrait"
-            android:exported="false"
-            />
-
-        <activity
-            android:name=".ui.webview.WebViewActivity"
             android:theme="@style/Theme.SampleApp"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"

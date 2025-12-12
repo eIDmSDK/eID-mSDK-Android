@@ -14,7 +14,6 @@ import sk.minv.base.utils.helpers.onClick
 import sk.minv.base.utils.helpers.subscribe
 import sk.minv.sample_app.R
 import sk.minv.sample_app.data.AppLanguage
-import sk.minv.sample_app.data.AuthenticationFlow
 import sk.minv.sample_app.databinding.FragmentSettingsBinding
 
 class SettingsFragment : BaseFragment<FragmentSettingsBinding, NoHandler>(), KoinComponent {
@@ -44,7 +43,6 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding, NoHandler>(), Koi
     override fun subscribeToData() {
         viewModel.environmentDataLoadState.subscribe(this, ::handleEnvironmentDataLoadState)
         viewModel.languageDataLoadState.subscribe(this, ::handleLanguageDataLoadState)
-        viewModel.authenticationFlowDataLoadState.subscribe(this, ::handleAuthenticationFlowDataLoadState)
         viewModel.resetTutorialDataLoadState.subscribe(this, ::handleResetTutorialDataLoadState)
     }
 
@@ -69,7 +67,6 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding, NoHandler>(), Koi
                 when (dataLoadState.data) {
                     EIDEnvironment.MINV_TEST -> binding.rbMinvTest.isChecked = true
                     EIDEnvironment.MINV_PROD -> binding.rbMinvProd.isChecked = true
-                    else -> binding.rbMinvTest.isChecked = true
                 }
                 binding.rgEnvironment.setOnCheckedChangeListener { _, checkedId ->
                     val selectedEnvironment = viewModel.onEnvironmentSelected(checkedId)
@@ -90,20 +87,6 @@ class SettingsFragment : BaseFragment<FragmentSettingsBinding, NoHandler>(), Koi
                     AppLanguage.ENGLISH -> binding.rbEnglish.isChecked = true
                 }
                 binding.rgLanguage.setOnCheckedChangeListener { _, checkedId -> viewModel.onLanguageSelected(checkedId) }
-            }
-            is DataLoadState.Error -> { }
-        }
-    }
-
-    private fun handleAuthenticationFlowDataLoadState(dataLoadState: DataLoadState<AuthenticationFlow>) {
-        when (dataLoadState) {
-            is DataLoadState.Loading -> { }
-            is DataLoadState.Success -> {
-                when (dataLoadState.data) {
-                    AuthenticationFlow.AUTH_CODE -> binding.rbAuthCode.isChecked = true
-                    AuthenticationFlow.IMPLICIT -> binding.rbImplicit.isChecked = true
-                }
-                binding.rgAuthFlow.setOnCheckedChangeListener { _, checkedId -> viewModel.onAuthenticationFlowSelected(checkedId) }
             }
             is DataLoadState.Error -> { }
         }

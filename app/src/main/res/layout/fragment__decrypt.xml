@@ -9,26 +9,15 @@
     android:animateLayoutChanges="true"
     tools:context=".ui.decrypt.DecryptActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <View
         android:id="@+id/header_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="70dp"
         android:background="@color/colorPrimary"
-        android:animateLayoutChanges="true"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/slovensko_sk_logo_white" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
     <ScrollView
         android:id="@+id/scroll_view"
@@ -448,6 +437,11 @@
                     />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_24"
+                />
 
         </LinearLayout>
 

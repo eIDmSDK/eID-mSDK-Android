@@ -1,4 +1,4 @@
-# eID-SDK (v1.4.2)
+# eID-SDK (v2.0)
 
 eID mSDK je zverejnené v Maven repozitári: https://github.com/eIDmSDK/eID-mSDK-Android/packages<br>
 V tomto repozitári je zverejnená Android sample aplikácia demonštrujúca použitie eID mSDK. 
