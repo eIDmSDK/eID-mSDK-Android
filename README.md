@@ -56,11 +56,7 @@ Registrácia Activity result launcher-a:
 
 ```kotlin
  authenticationLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-    if (result.resultCode == Activity.RESULT_OK) {
-        // Retrieve ID token from eID SDK
-        val idToken = result.data?.getStringExtra("ID_TOKEN")
-        // Process idToken
-        
+    if (result.resultCode == Activity.RESULT_OK) {  
         // Retrieve Auth code from eID SDK
         val authCode = result.data?.getStringExtra("AUTH_CODE")
         // Process Auth code
@@ -77,18 +73,6 @@ Auth code flow:
 
 ```kotlin
 EIDHandler.startAuth(CLIENT_ID, CLIENT_SECRET, API_KEY_ID?, API_KEY_VALUE?, this, authenticationLauncher, language)
-```
-
-Implicit flow:
-
-```kotlin
-EIDHandler.startAuth(CLIENT_ID, API_KEY_ID?, API_KEY_VALUE?, this, authenticationLauncher, language)
-```
-
-Auth code / Implicit flow:
-
-```kotlin
-EIDHandler.startAuth(CLIENT_ID, CLIENT_SECRET?, API_KEY_ID?, API_KEY_VALUE?, this, authenticationLauncher, EIDAuthenticationFlow, language)
 ```
 
 <br>
